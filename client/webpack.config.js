@@ -31,7 +31,7 @@ const config = {
       path.resolve(SRC_PATH, './index.jsx'),
     ],
   },
-  mode: 'production',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   module: {
     rules: [
       {
