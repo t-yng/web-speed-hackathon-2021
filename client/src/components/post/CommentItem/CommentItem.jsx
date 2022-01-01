@@ -1,8 +1,12 @@
-import moment from 'moment';
 import React from 'react';
+import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 
 import { getProfileImagePath } from '../../../utils/get_path';
+
+import 'dayjs/locale/ja'; // import locale
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+dayjs.extend(localizedFormat);
 
 /**
  * @typedef {object} Props
@@ -33,8 +37,8 @@ const CommentItem = ({ comment }) => {
           </p>
           <p className="text-gray-800 text-sm leading-relaxed">{comment.text}</p>
           <p className="text-gray-500 text-xs">
-            <time dateTime={moment(comment.createdAt).toISOString()}>
-              {moment(comment.createdAt).locale('ja').format('LL')}
+            <time dateTime={dayjs(comment.createdAt).toISOString()}>
+              {dayjs(comment.createdAt).locale('ja').format('LL')}
             </time>
           </p>
         </div>
