@@ -53,6 +53,7 @@ const config = {
   },
   output: {
     filename: 'scripts/[name].js',
+    chunkFilename: 'scripts/[name].bundle.js',
     path: DIST_PATH,
   },
   plugins: [
