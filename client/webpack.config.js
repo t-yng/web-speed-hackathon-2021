@@ -25,7 +25,6 @@ const config = {
   devtool: process.env.NODE_ENV === 'development' ? 'inline-source-map' : false,
   entry: {
     main: [
-      'core-js',
       'regenerator-runtime/runtime',
       'jquery-binarytransport',
       path.resolve(SRC_PATH, './index.css'),
