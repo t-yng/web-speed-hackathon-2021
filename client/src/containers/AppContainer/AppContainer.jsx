@@ -8,11 +8,15 @@ import { fetchJSON } from '../../utils/fetchers';
 import { AuthModalContainer } from '../AuthModalContainer';
 import { NewPostModalContainer } from '../NewPostModalContainer';
 import { NotFoundContainer } from '../NotFoundContainer';
+import PostContainer from '../PostContainer';
+import TermContainer from '../TermContainer';
+import TimelineContainer from '../TimelineContainer';
+import UserProfileContainer from '../UserProfileContainer';
 
-const PostContainer = React.lazy(() => import('../PostContainer'));
-const TermContainer = React.lazy(() => import('../TermContainer'));
-const TimelineContainer = React.lazy(() => import('../TimelineContainer'));
-const UserProfileContainer = React.lazy(() => import('../UserProfileContainer'));
+// const PostContainer = React.lazy(() => import('../PostContainer'));
+// const TermContainer = React.lazy(() => import('../TermContainer'));
+// const TimelineContainer = React.lazy(() => import('../TimelineContainer'));
+// const UserProfileContainer = React.lazy(() => import('../UserProfileContainer'));
 
 /** @type {React.VFC} */
 const AppContainer = () => {
@@ -47,15 +51,15 @@ const AppContainer = () => {
         onRequestOpenAuthModal={handleRequestOpenAuthModal}
         onRequestOpenPostModal={handleRequestOpenPostModal}
       >
-        <React.Suspense fallback="Lodaing...">
-          <Routes>
-            <Route element={<TimelineContainer />} path="/" />
-            <Route element={<UserProfileContainer />} path="/users/:username" />
-            <Route element={<PostContainer />} path="/posts/:postId" />
-            <Route element={<TermContainer />} path="/terms" />
-            <Route element={<NotFoundContainer />} path="*" />
-          </Routes>
-        </React.Suspense>
+        {/* <React.Suspense fallback="Lodaing..."> */}
+        <Routes>
+          <Route element={<TimelineContainer />} path="/" />
+          <Route element={<UserProfileContainer />} path="/users/:username" />
+          <Route element={<PostContainer />} path="/posts/:postId" />
+          <Route element={<TermContainer />} path="/terms" />
+          <Route element={<NotFoundContainer />} path="*" />
+        </Routes>
+        {/* </React.Suspense> */}
       </AppPage>
 
       {modalType === 'auth' ? (
