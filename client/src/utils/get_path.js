@@ -11,7 +11,8 @@ function getImagePath(imageId) {
  * @returns {string}
  */
 function getMoviePath(movieId) {
-  return `/movies/${movieId}.gif`;
+  // jsdelivr が20MBの制限があるので、gifはrawcdnで配信
+  return `https://rawcdn.githack.com/t-yng/web-speed-hackathon-2021/4ba5b8b62ecfc5e3df58806affe904b94c49b745/public/movies/${movieId}.gif`;
 }
 
 /**
