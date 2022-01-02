@@ -3,7 +3,7 @@
  * @returns {string}
  */
 function getImagePath(imageId) {
-  return `/images/${imageId}.webp`;
+  return `https://cdn.jsdelivr.net/gh/t-yng/web-speed-hackathon-2021@main/public/images/${imageId}.webp`;
 }
 
 /**
@@ -19,7 +19,7 @@ function getMoviePath(movieId) {
  * @returns {string}
  */
 function getSoundPath(soundId) {
-  return `/sounds/${soundId}.mp3`;
+  return `https://cdn.jsdelivr.net/gh/t-yng/web-speed-hackathon-2021@main/public/sounds/${soundId}.mp3`;
 }
 
 /**
@@ -27,7 +27,7 @@ function getSoundPath(soundId) {
  * @returns {string}
  */
 function getProfileImagePath(profileImageId) {
-  return `/images/profiles/${profileImageId}.webp`;
+  return `https://cdn.jsdelivr.net/gh/t-yng/web-speed-hackathon-2021@main/public/images/profiles/${profileImageId}.webp`;
 }
 
 export { getImagePath, getMoviePath, getSoundPath, getProfileImagePath };
